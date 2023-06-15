@@ -6,8 +6,17 @@ class vendor(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     address = models.CharField(max_length=100)
 
-    # def __str__(self):
-    #     return self.address
+    def __str__(self):
+        return self.user.username
+
+class vendorDetail(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    address = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 class product(models.Model):
     title = models.CharField(max_length=100)
