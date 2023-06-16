@@ -74,3 +74,11 @@ class OrderDetailsSerializer(serializers.ModelSerializer):
         fields = ('id', 'product', 'order')
         depth = 1
 
+# customer address serializer
+
+class CustomerAddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.customerAddress
+        fields = ('id', 'customer', 'address')
+        depth = 1
+

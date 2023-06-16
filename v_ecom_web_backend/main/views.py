@@ -57,20 +57,11 @@ class OrderDetails(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.orderItem.objects.all()
     serializer_class = serializers.OrderDetailsSerializer
     
-    
+# customer address view
 
-    
-# OrderItem view
-
-# class OrderList(generics.ListCreateAPIView):
-#     queryset = models.orderList.objects.all()
-#     serializer_class = serializers.OrderListSerializer
-
-# OrderDetailsList view
-
-# class OrderDetailsList(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = models.orderList.objects.all()
-#     serializer_class = serializers.OrderDetailsListSerializer
+class CustomerAddressList(generics.ListCreateAPIView):
+    queryset = models.customerAddress.objects.all()
+    serializer_class = serializers.CustomerAddressSerializer
     
 
 

@@ -35,7 +35,6 @@ class product(models.Model):
 
 class customer(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    address = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     phone = models.CharField(max_length=100)
 
@@ -59,6 +58,16 @@ class orderItem(models.Model):
     
     def __str__(self):
         return self.product.title
+
+# customer address Model
+
+class customerAddress(models.Model):
+    customer = models.ForeignKey(customer, on_delete=models.CASCADE, related_name='customer_address') # condition for delete customer
+    address = models.CharField(max_length=100)
+    default_address = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.address
 
     
 

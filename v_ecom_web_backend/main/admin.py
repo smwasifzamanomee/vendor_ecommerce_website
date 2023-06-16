@@ -20,3 +20,6 @@ admin.site.register(models.order)
 
 # order item admin
 admin.site.register(models.orderItem)
+
+# customer address admin
+admin.site.register(models.customerAddress)
