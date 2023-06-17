@@ -14,7 +14,7 @@ module.exports = {
       },
       screens: {
         //Add our screen sizes
-        'sm': {'min': '370px','max': '768px'},
+        'sm': {'min': '360px','max': '768px'},
         'md': {'min': '769px', 'max': '992px'},
         'lg': {'min': '993px' },
         'xl': { 'min': '1300px'}
