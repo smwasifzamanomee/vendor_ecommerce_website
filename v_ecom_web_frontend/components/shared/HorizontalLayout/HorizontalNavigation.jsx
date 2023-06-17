@@ -1,9 +1,69 @@
-import React from 'react'
+import Link from "next/link";
+import { FaPhoneAlt } from "react-icons/fa"
+import Image from "next/image";
+import { useRouter } from "next/router";
+import { navigation } from "@/data/data";
+import Button from "@/components/utils/Button";
+import CustomLink from "@/components/utils/CustomLink";
+import logo from "@/public/images/Vendor.png";
 
-const HorizontalNavigation = () => {
+// Horizontal Navigation Component
+const index = () => {
+  const router = useRouter();
+  const { pathname } = router;
+
   return (
-    <div>HorizontalNavigation</div>
+    <div className=" bg-secondary ">
+      <nav className="container mx-auto px-3 flex justify-between items-center" aria-label="Top">
+
+        {/* Logo and Menu Icon */}
+        
+          <div className="relative  h-[80px] w-[100px]">
+            <Link href={`/`}>
+              <Image
+                src={logo}
+                fill
+                alt="verdor e-commerce logo"
+                className=""
+              />
+            </Link>
+          </div>
+        
+
+        {/* different pages route field */}
+        <div className="flex justify-center items-center gap-8 py-2  xl:gap-16 ">
+          {
+            navigation.map((navList) => (
+              <CustomLink
+                key={navList.id}
+                route={navList.route}
+                pathname={pathname}
+              >
+                {navList.name}
+              </CustomLink>
+            ))
+          }
+        </div>
+
+        {/* Registration Button */}
+        <div className="flex xl:gap-4 lg:gap-1 ">
+          <>
+            <a
+              className="flex items-center justify-center gap-x-2 px-4 rounded-full text-white"
+              href={`tel:+8801910312566`}
+            >
+              <FaPhoneAlt /> <span className="text-white hover:text-primary">+8801910312566</span></a>
+            <Link href="/registration">
+              <Button width={"xl:w-[150px] lg:w-[100px]"} bgColor={"bg-transparent hover:bg-primary"} className={
+                "border border-primary text-primary hover:text-white"
+              } > Sign Up
+              </Button>
+            </Link>
+          </>
+        </div>
+      </nav>
+    </div>
   )
 }
 
-export default HorizontalNavigation
+export default index

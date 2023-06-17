@@ -1,0 +1,18 @@
+.nav_link {
+    position: relative;
+  }
+  
+  .nav_link::after {
+    content: "";
+    position: absolute;
+    background: white;
+    height: 2px;
+    width: 0;
+    left: 0;
+    bottom: 0px;
+    transition: width 300ms ease-in-out;
+  }
+  
+  .nav_link:hover::after {
+    width: 100%;
+  }
