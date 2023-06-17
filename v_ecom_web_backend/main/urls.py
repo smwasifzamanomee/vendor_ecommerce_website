@@ -1,5 +1,11 @@
 from django.urls import path
 from . import views
+from rest_framework import routers
+
+# product rating and review serializer admin
+# router = routers.DefaultRouter()
+# router.register('product-rating', views.ProductRatingViewSet)
+
 
 urlpatterns = [
     path('vendors/', views.VendorList.as_view(), name='vendors-list'),
@@ -12,4 +18,7 @@ urlpatterns = [
     path('orders/', views.OrderList.as_view(), name='order-list'),
     path('order/<int:pk>/', views.OrderDetails.as_view(), name='order-details-list'),
     path('customer-address/', views.CustomerAddressList.as_view(), name='customer-address-list'),
+    path('product-rating/', views.ProductRatingList.as_view(), name='product-rating-list'),
 ]
+
+# urlpatterns += router.urls

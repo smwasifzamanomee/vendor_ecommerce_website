@@ -36,10 +36,12 @@ class ProductSerializer(serializers.ModelSerializer):
 # product details serializer
 
 class ProductDetailsSerializer(serializers.ModelSerializer):
+    
+    product_rating = serializers.StringRelatedField(many=True, read_only=True)
         
     class Meta:
         model = models.product
-        fields = ('id', 'vendor', 'category', 'title', 'details', 'price')
+        fields = ('id', 'vendor', 'category', 'title', 'details', 'price', 'product_rating')
         # depth = 1
 
 # customer serializer
@@ -79,6 +81,14 @@ class OrderDetailsSerializer(serializers.ModelSerializer):
 class CustomerAddressSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.customerAddress
-        fields = ('id', 'customer', 'address')
+        fields = ('id', 'customer', 'address', 'default_address')
         depth = 1
+
+# product rating and review serializer
+
+class ProductRatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.productRating
+        fields = ('id', 'product', 'customer', 'rating', 'review', 'date_created')
+        # depth = 1
 

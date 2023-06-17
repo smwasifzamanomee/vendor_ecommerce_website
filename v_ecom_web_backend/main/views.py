@@ -1,4 +1,4 @@
-from rest_framework import generics, permissions
+from rest_framework import generics, permissions, viewsets
 from . import serializers
 from . import models
 
@@ -62,6 +62,19 @@ class OrderDetails(generics.RetrieveUpdateDestroyAPIView):
 class CustomerAddressList(generics.ListCreateAPIView):
     queryset = models.customerAddress.objects.all()
     serializer_class = serializers.CustomerAddressSerializer
+    
+# customer product rating and review 
+
+class ProductRatingList(generics.ListCreateAPIView):
+    queryset = models.productRating.objects.all()
+    serializer_class = serializers.ProductRatingSerializer
+
+# customer product rating and review viewset
+
+# class ProductRatingViewSet(viewsets.ModelViewSet):
+#     queryset = models.productRating.objects.all()
+#     serializer_class = serializers.ProductRatingSerializer
+    # permission_classes = [permissions.IsAuthenticated,]
     
 
 

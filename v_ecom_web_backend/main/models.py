@@ -69,6 +69,17 @@ class customerAddress(models.Model):
     def __str__(self):
         return self.address
 
+# products rating and reviews
+
+class productRating(models.Model):
+    product = models.ForeignKey(product, on_delete=models.CASCADE, related_name='product_rating') # condition for delete product
+    customer = models.ForeignKey(customer, on_delete=models.CASCADE, related_name='customer_rating') # condition for delete customer
+    rating = models.IntegerField(default=0)
+    review = models.TextField(null=True, blank=True)
+    date_created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f'{self.rating} - {self.review}'
     
 
 
