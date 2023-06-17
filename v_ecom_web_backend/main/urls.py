@@ -6,6 +6,9 @@ from rest_framework import routers
 # router = routers.DefaultRouter()
 # router.register('product-rating', views.ProductRatingViewSet)
 
+# customer address serializer admin
+# router.register('customer-address', views.CustomerAddressViewSet)
+
 
 urlpatterns = [
     path('vendors/', views.VendorList.as_view(), name='vendors-list'),

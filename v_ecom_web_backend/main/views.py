@@ -62,6 +62,12 @@ class OrderDetails(generics.RetrieveUpdateDestroyAPIView):
 class CustomerAddressList(generics.ListCreateAPIView):
     queryset = models.customerAddress.objects.all()
     serializer_class = serializers.CustomerAddressSerializer
+
+# customer address viewset
+
+# class CustomerAddressViewSet(viewsets.ModelViewSet):
+#     queryset = models.customerAddress.objects.all()
+#     serializer_class = serializers.CustomerAddressSerializer
     
 # customer product rating and review 
 
@@ -74,7 +80,6 @@ class ProductRatingList(generics.ListCreateAPIView):
 # class ProductRatingViewSet(viewsets.ModelViewSet):
 #     queryset = models.productRating.objects.all()
 #     serializer_class = serializers.ProductRatingSerializer
-    # permission_classes = [permissions.IsAuthenticated,]
     
 
 
