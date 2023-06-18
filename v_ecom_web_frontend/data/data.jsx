@@ -27,7 +27,53 @@ const latestProducts = [
   }
 ]
 
+const review = [
+  {
+    id: 1,
+    name: 'John Doe',
+    title: 'CEO of Company',
+    description: 'This trip was an amazing experience! The guide was knowledgeable and friendly, and the itinerary was well-planned. Highly recommend!',
+    image: '/images/Testimonial/testim1.jpeg',
+  },
+  {
+    id: 2,
+    name: 'John Doe',
+    title: 'CEO of Company',
+    description: 'I had a great time on this trip. Everything was well-organized and the transportation was comfortable. Would definitely book with this company again.',
+    image: '/images/Testimonial/testim2.jpeg',
+  },
+  {
+    id: 3,
+    name: 'John Doe',
+    title: 'CEO of Company',
+    description: 'The sights we saw on this trip were breathtaking. Our guide was a wealth of knowledge and made the experience even better.',
+    image: '/images/Testimonial/testim3.jpeg',
+  },
+  {
+    id: 4,
+    name: 'John Doe',
+    title: 'CEO of Company',
+    description: 'This trip was an amazing experience! The guide was knowledgeable and friendly, and the itinerary was well-planned. Highly recommend!',
+    image: '/images/Testimonial/testim1.jpeg',
+  },
+  {
+    id: 5,
+    name: 'John Doe',
+    title: 'CEO of Company',
+    description: 'I had a great time on this trip. Everything was well-organized and the transportation was comfortable. Would definitely book with this company again.',
+    image: '/images/Testimonial/testim2.jpeg',
+  },
+  {
+    id: 6,
+    name: 'John Doe',
+    title: 'CEO of Company',
+    description: 'The sights we saw on this trip were breathtaking. Our guide was a wealth of knowledge and made the experience even better.',
+    image: '/images/Testimonial/testim3.jpeg',
+  },
+]
+
 export {
     navigation,
-    latestProducts
+    latestProducts,
+    review
 }

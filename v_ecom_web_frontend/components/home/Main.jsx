@@ -4,6 +4,7 @@ import Products from './Products'
 import Categories from './Categories'
 import PopularProjects from './PopularProjects'
 import PopularSeller from './PopularSeller'
+import ReviewAndRatings from './ReviewAndRatings'
 
 const Main = () => {
   return (
@@ -13,6 +14,7 @@ const Main = () => {
         <Categories/>
         <PopularProjects/>
         <PopularSeller/>
+        <ReviewAndRatings/>
     </div>
   )
 }
