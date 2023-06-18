@@ -72,8 +72,27 @@ const review = [
   },
 ]
 
+const CategoryData = [
+  {
+      id: 1,
+      title: "Shoe",
+      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      image: "",
+      download: "3464"
+  },
+  {
+      id: 2,
+      title: "Shoe",
+      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard",
+      image: "",
+      download: "3999"
+  }
+ 
+]
+
 export {
     navigation,
     latestProducts,
-    review
+    review,
+    CategoryData
 }
