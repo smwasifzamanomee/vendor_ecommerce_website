@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../utils/Button'
 import { latestProducts } from '@/data/data'
+import Link from 'next/link'
 
 const PopularProjects = () => {
     return (
@@ -8,7 +9,9 @@ const PopularProjects = () => {
             <div className='container mx-auto px-3 flex justify-between items-center'>
 
                 <p className='text-3xl font-bold text-primary'>Popular Projects</p>
+                <Link href='/products'>
                 <Button className={'bg-tertiary mt-4'}>View All Projects</Button>
+                </Link>
             </div>
             <div className='container mx-auto px-3 grid grid-cols-4 py-10 gap-6'>
                 {
