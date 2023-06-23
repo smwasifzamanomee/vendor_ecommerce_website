@@ -103,9 +103,11 @@ const index = () => {
                     <p className="text-white block px-4 py-2 text-sm" role="menuitem" tabIndex="-1" id="menu-item-1">
                       Login
                     </p>
-                    <p className="text-white block px-4 py-2 text-sm" role="menuitem" tabIndex="-1" id="menu-item-2">
-                      Dashboard
-                    </p>
+                    <Link href="/dashboard">
+                      <p className="text-white block px-4 py-2 text-sm" role="menuitem" tabIndex="-1" id="menu-item-2">
+                        Dashboard
+                      </p>
+                    </Link>
                     <form method="POST" action="#" role="none">
                       <button
                         type="submit"
