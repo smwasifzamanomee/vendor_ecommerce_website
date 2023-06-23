@@ -15,9 +15,14 @@ const index = () => {
   const { pathname } = router;
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpen1, setIsOpen1] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const toggleMenu1 = () => {
+    setIsOpen1(!isOpen1);
   };
 
   return (
@@ -55,18 +60,22 @@ const index = () => {
 
         {/* Registration Button */}
         <div className="flex xl:gap-4 lg:gap-1 ">
-          <Link href="/AddToCart" className="flex text-white justify-between items-center cursor-pointer hover:text-primary">
+          <Link href="/add-to-cart" className="flex text-white justify-between items-center cursor-pointer hover:text-primary">
             <HiShoppingCart className="text-2xl" />
-            <p>Add To Cart</p>
+            <p>My Cart (2) </p>
+          </Link>
+          <Link href="/new-order" className="flex text-white justify-between items-center cursor-pointer hover:text-primary">
+            <HiShoppingCart className="text-2xl" />
+            <p>New Order (4)</p>
           </Link>
           <>
-            <a
+            {/* <a
               className="flex items-center justify-center gap-x-2 px-4 rounded-full text-white hover:text-primary"
               href={`tel:+8801910312566`}
             >
-              <FaPhoneAlt /> <span>+8801910312566</span></a>
+              <FaPhoneAlt /> <span>+8801910312566</span></a> */}
 
-            {/* dropdown  */}
+            {/* customer dropdown  */}
             <div className="relative inline-block text-left">
               <div>
                 <button
@@ -77,7 +86,7 @@ const index = () => {
                   aria-haspopup="true"
                   onClick={toggleMenu}
                 >
-                  Account
+                  customer Account
                   <svg
                     className={`-mr-1 h-5 w-5 text-gray-400 ${isOpen ? 'transform rotate-180' : ''}`}
                     viewBox="0 0 20 20"
@@ -95,7 +104,7 @@ const index = () => {
               {isOpen && (
                 <div className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-tertiary shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex="-1">
                   <div className="py-1" role="none">
-                    <Link href="/register">
+                    <Link href="/customer-register">
                       <p className="text-white block px-4 py-2 text-sm" role="menuitem" tabIndex="-1" id="menu-item-0">
                         Register
                       </p>
@@ -103,7 +112,7 @@ const index = () => {
                     <p className="text-white block px-4 py-2 text-sm" role="menuitem" tabIndex="-1" id="menu-item-1">
                       Login
                     </p>
-                    <Link href="/dashboard">
+                    <Link href="/customer-dashboard">
                       <p className="text-white block px-4 py-2 text-sm" role="menuitem" tabIndex="-1" id="menu-item-2">
                         Dashboard
                       </p>
@@ -123,8 +132,66 @@ const index = () => {
                 </div>
               )}
             </div>
+            {/* end customer dropdowm */}
 
-            {/* end */}
+            {/* seller dropdown  */}
+            <div className="relative inline-block text-left">
+              <div>
+                <button
+                  type="button"
+                  className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+                  id="menu-button"
+                  aria-expanded={isOpen1}
+                  aria-haspopup="true"
+                  onClick={toggleMenu1}
+                >
+                  seller Account
+                  <svg
+                    className={`-mr-1 h-5 w-5 text-gray-400 ${isOpen1 ? 'transform rotate-180' : ''}`}
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </button>
+              </div>
+              {isOpen1 && (
+                <div className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-tertiary shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex="-1">
+                  <div className="py-1" role="none">
+                    <Link href="/seller-register">
+                      <p className="text-white block px-4 py-2 text-sm" role="menuitem" tabIndex="-1" id="menu-item-0">
+                        Register
+                      </p>
+                    </Link>
+                    <p className="text-white block px-4 py-2 text-sm" role="menuitem" tabIndex="-1" id="menu-item-1">
+                      Login
+                    </p>
+                    <Link href="/seller-dashboard">
+                      <p className="text-white block px-4 py-2 text-sm" role="menuitem" tabIndex="-1" id="menu-item-2">
+                        Dashboard
+                      </p>
+                    </Link>
+                    <form method="POST" action="#" role="none">
+                      <button
+                        type="submit"
+                        className="text-white block w-full px-4 py-2 text-left text-sm"
+                        role="menuitem"
+                        tabIndex="-1"
+                        id="menu-item-3"
+                      >
+                        Logout
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              )}
+            </div>
+            {/* end seller dropdowm */}
           </>
         </div>
       </nav>
