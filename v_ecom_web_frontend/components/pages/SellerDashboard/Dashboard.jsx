@@ -6,6 +6,7 @@ import ChangePassword from './ChangePassword';
 import Report from './Report';
 import Customer from './Customer';
 import ProductData from './ProductData';
+import AddProduct from './AddProduct';
 
 const Dashboard = () => {
     const [activeTab, setActiveTab] = useState('dashboard');
@@ -29,6 +30,12 @@ const Dashboard = () => {
                         onClick={() => handleTabClick('products')}
                     >
                         Products <hr className='border border-tertiary w-40'/>
+                    </li>
+                    <li
+                        className={activeTab === 'add-products' ? 'active text-primary py-2' : 'py-2'}
+                        onClick={() => handleTabClick('add-products')}
+                    >
+                        Add Products <hr className='border border-tertiary w-40'/>
                     </li>
                     <li
                         className={activeTab === 'orders' ? 'active text-primary py-2' : 'py-2'}
@@ -72,6 +79,7 @@ const Dashboard = () => {
             <div className='w-[80%]'>
                 {activeTab === 'dashboard' && <DashboardData/>}
                 {activeTab === 'products' && <ProductData/>}
+                {activeTab === 'add-products' && <AddProduct />}
                 {activeTab === 'orders' && <OrderData/>}
                 {activeTab === 'profile' && <Profile/>}
                 {activeTab === 'change-password' && <ChangePassword/>}

@@ -1,6 +1,7 @@
+import Link from 'next/link'
 import React from 'react'
 
-const WishlistData = () => {
+const ProductData = () => {
     return (
         <div>
             <div className="px-4 sm:px-6 lg:px-8">
@@ -41,4 +42,4 @@ const WishlistData = () => {
     )
 }
 
-export default WishlistData
+export default ProductData

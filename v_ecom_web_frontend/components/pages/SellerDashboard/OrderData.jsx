@@ -21,7 +21,12 @@ const OrderData = () => {
                                 <td className="hidden px-3 py-3.5 text-sm text-gray-500 lg:table-cell">Python</td>
                                 <td className="hidden px-3 py-3.5 text-sm text-gray-500 lg:table-cell">200tk</td>
                                 <td className="hidden px-3 py-3.5 text-sm text-gray-500 lg:table-cell">Complete</td>
-                                <td className="hidden px-3 py-3.5 text-sm text-gray-500 lg:table-cell">Download</td>
+                                <td className="hidden px-3 py-3.5 text-sm text-gray-500 lg:table-cell">
+                                    <select className='bg-tertiary text-white p-2 rounded'>
+                                        <option value="complete">Complete</option>
+                                        <option value="pending">Pending</option>
+                                    </select>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
