@@ -23,6 +23,7 @@ urlpatterns = [
     path('order/<int:pk>/', views.OrderDetails.as_view(), name='order-details-list'),
     path('customer-address/', views.CustomerAddressList.as_view(), name='customer-address-list'),
     path('product-rating/', views.ProductRatingList.as_view(), name='product-rating-list'),
+    path('images/', views.ProductImageList.as_view(), name='product-image-list'),
 ]
 
 # urlpatterns += router.urls

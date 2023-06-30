@@ -26,3 +26,6 @@ admin.site.register(models.customerAddress)
 
 # customer product rating and review admin
 admin.site.register(models.productRating)
+
+# product image admin
+admin.site.register(models.productImage)

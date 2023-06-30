@@ -80,6 +80,13 @@ class productRating(models.Model):
 
     def __str__(self):
         return f'{self.rating} - {self.review}'
+
+class productImage(models.Model):
+    product = models.ForeignKey(product, on_delete=models.CASCADE, related_name='product_image') # condition for delete product
+    image = models.ImageField(upload_to='product_image', null=True, blank=True)
+
+    def __str__(self):
+        return self.product.title
     
 
 

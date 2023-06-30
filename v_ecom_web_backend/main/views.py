@@ -1,4 +1,4 @@
-from rest_framework import generics, permissions, viewsets
+from rest_framework import generics, permissions, viewsets, pagination
 from . import serializers
 from . import models
 
@@ -32,6 +32,14 @@ class ProductCategoryDetailsList(generics.RetrieveUpdateDestroyAPIView):
 class ProductList(generics.ListCreateAPIView):
     queryset = models.product.objects.all()
     serializer_class = serializers.ProductSerializer
+    pagination_class = pagination.PageNumberPagination
+    
+    def get_queryset(self):
+        queryset = models.product.objects.all()
+        product_category = self.request.query_params.get('product_category', None)
+        if product_category is not None:
+            queryset = queryset.filter(product_category=product_category)
+        return queryset
     
 # ProductDetailsList view
 
@@ -88,6 +96,10 @@ class ProductRatingList(generics.ListCreateAPIView):
 #     serializer_class = serializers.ProductRatingSerializer
     
 
+# images view
 
+class ProductImageList(generics.ListCreateAPIView):
+    queryset = models.productImage.objects.all()
+    serializer_class = serializers.ProductImageSerializer
 
     
